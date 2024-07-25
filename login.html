@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login dan Register Dosen</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #5a2a83, #3b1769);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        text-align: center;
+        position: relative;
+      }
+      .container h2 {
+        margin-bottom: 20px;
+        color: #5a2a83;
+      }
+      .container input[type="text"],
+      .container input[type="email"],
+      .container input[type="password"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .container input[type="text"]::placeholder,
+      .container input[type="email"]::placeholder,
+      .container input[type="password"]::placeholder {
+        color: #888;
+      }
+      .container .button {
+        background-color: #e74c3c;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: calc(100% - 20px);
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+      }
+      .container .button:hover {
+        background-color: #c0392b;
+      }
+      .container a {
+        color: #5a2a83;
+        text-decoration: none;
+        display: block;
+        margin: 10px 0;
+      }
+      .container .toggle {
+        cursor: pointer;
+        color: #5a2a83;
+        margin-top: 15px;
+      }
+      .container .watermark {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        font-size: 18px;
+        opacity: 0.3;
+        transform: rotate(-90deg);
+        color: #ddd;
+      }
+      .container .logo {
+        margin-bottom: 20px;
+      }
+      .container .logo img {
+        width: 50px;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="loginContainer">
+      <div class="logo">
+        <img
+          src="http://amikom.ac.id/public/docs/2016/logo_amikom_full_color.png"
+          alt="Logo"
+        />
+      </div>
+      <h2>Login Dosen</h2>
+      <form action="/login" method="post">
+        <input
+          type="email"
+          name="email"
+          placeholder="Username@dosen.amikom.ac.id"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <button type="submit" class="button">
+          <a href="dashboard.html"> Log In </a>
+        </button>
+      </form>
+      <a href="/forgot-password">Forgot Password?</a>
+      <div class="toggle" onclick="toggleForm()">Create akun? Register</div>
+    </div>
+
+    <div class="container hidden" id="registerContainer">
+      <div class="watermark">23.01.5089</div>
+      <div class="logo">
+        <img
+          src="http://amikom.ac.id/public/docs/2016/logo_amikom_full_color.png"
+          alt="Logo"
+        />
+      </div>
+      <h2>Register</h2>
+      <form action="/register" method="post">
+        <input type="text" name="nidn" placeholder="NIDN" required />
+        <input
+          type="email"
+          name="email"
+          placeholder="Username@dosen.amikom.ac.id"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <input
+          type="password"
+          name="confirm-password"
+          placeholder="Konfirmasi Password"
+          required
+        />
+        <button type="submit" class="button">Sign in</button>
+      </form>
+      <div class="toggle" onclick="toggleForm()">Sudah punya akun? Login</div>
+    </div>
+    <script>
+      function toggleForm() {
+        var loginContainer = document.getElementById("loginContainer");
+        var registerContainer = document.getElementById("registerContainer");
+        loginContainer.classList.toggle("hidden");
+        registerContainer.classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>

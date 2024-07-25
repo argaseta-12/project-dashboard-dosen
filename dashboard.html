@@ -1,0 +1,157 @@
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Web APP</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1><img src="http://amikom.ac.id/public/docs/2016/logo_amikom_full_color.png" alt="Logo" /> </h1>
+      <button id="logoutButton">LOGOUT</button>
+    </header>
+    <div class="container">
+      <div class="sidebar">
+        <div class="profile">
+          <img src="http://amikom.ac.id/public/docs/2016/logo_amikom_full_color.png" alt="Profile Picture" />
+          <h2>Rohman Arga Seta.</h2>
+          <p>23.01.5089</p>
+          <button id="viewProfileButton">LIHAT PROFIL</button>
+        </div>
+        <hr />
+        <nav>
+          <ul>
+            <li><a href="#" data-target="Dashboard">Dashboard</a></li>
+            <li><a href="#" data-target="Rekap">Rekapitulasi Nilai dan Tambah Data </a></li>
+            <li><a href="#" data-target="TambahData">Biodata Dosen</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="Dashboard" class="main-content">
+        <div class="header
+        <div class="header">
+          <h1>DASHBOARD DOSEN</h1>
+        </div>
+        <div class="summary-section">
+          <div class="left-summary">
+            <div class="summary-box">
+              <h3>Jumlah kelas yang diampu</h3>
+              <!-- Add content here -->
+            </div>
+            <div class="summary-box">
+              <h3>Jumlah mahasiswa yang diampu</h3>
+              <!-- Add content here -->
+            </div>
+          </div>
+          <div class="right-summary">
+            <h3>Jadwal hari ini</h3>
+            <!-- Add content here -->
+          </div>
+        </div>
+        <h3>Jadwal Perkuliahan</h3>
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>NO</th>
+              <th>Hari</th>
+              <th>Waktu</th>
+              <th>Kelas</th>
+              <th>Ruang</th>
+              <th>Mata Kuliah</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Senin</td>
+              <td>08:00 - 10:00</td>
+              <td>A</td>
+              <td>101</td>
+              <td>Matematika</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Selasa</td>
+              <td>10:00 - 12:00</td>
+              <td>B</td>
+              <td>102</td>
+              <td>Fisika</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Rabu</td>
+              <td>13:00 - 15:00</td>
+              <td>C</td>
+              <td>103</td>
+              <td>Kimia</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Kamis</td>
+              <td>08:00 - 10:00</td>
+              <td>D</td>
+              <td>104</td>
+              <td>Biologi</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Jumat</td>
+              <td>10:00 - 12:00</td>
+              <td>E</td>
+              <td>105</td>
+              <td>Geografi</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Sabtu</td>
+              <td>13:00 - 15:00</td>
+              <td>F</td>
+              <td>106</td>
+              <td>Sejarah</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="Rekap" class="main-content" style="display: none">
+        <h3>Rekapitulasi Nilai dan Tambah Data</h3>
+        <form id="nilaiForm">
+          <label for="nama">Nama Mahasiswa:</label>
+          <input type="text" id="nama" name="nama" required />
+          <label for="tugas1">Tugas 1:</label>
+          <input type="number" id="tugas1" name="tugas1" required />
+          <label for="tugas2">Tugas 2:</label>
+          <input type="number" id="tugas2" name="tugas2" required />
+          <label for="tugas3">Tugas 3:</label>
+          <input type="number" id="tugas3" name="tugas3" required />
+          <label for="uas">Nilai UAS:</label>
+          <input type="number" id="uas" name="uas" required />
+          <label for="uts">Nilai UTS:</label>
+          <input type="number" id="uts" name="uts" required />
+          <label for="keterangan">Keterangan:</label>
+          <input type="text" id="keterangan" name="keterangan" />
+          <button type="submit">Tambah Data</button>
+        </form>
+        <table class="rekap-nilai-table">
+          <thead>
+            <tr>
+              <th>NO</th>
+              <th>Nama Mahasiswa</th>
+              <th>Tugas 1</th>
+              <th>Tugas 2</th>
+              <th>Tugas 3</th>
+              <th>UAS</th>
+              <th>UTS</th>
+              <th>Keterangan</th>
+            </tr>
+          </thead>
+          <tbody id="nilaiTableBody">
+          </tbody>
+        </table>
+      </div>
+      <div id="TambahData" class="main-content" style="display: none">
+        <h3>Biodata</h3>
+        <!-- Add content here for adding data -->
+         
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
